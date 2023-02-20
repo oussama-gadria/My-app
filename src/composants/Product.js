@@ -13,22 +13,7 @@ class Product extends Component {
             like:this.state.like + 1
         })
     } 
-    decrementquantite=()=>{ 
-      if (this.state.quantite>0){ 
-        this.setState({ 
-          quantite:this.state.quantite - 1 ,
-          message:"You Bought an item",
-          variant:"success"
-      })
-      setTimeout(()=>{ 
-        this.setState({ 
-          message:"",
-          variant:null
-      })
-      },2000)
-      }
-      
-    }
+    
     
 
     render() { 
@@ -49,7 +34,7 @@ class Product extends Component {
          
         </Card.Body>
         <button  onClick={this.IncrementLike}> Like </button>
-        <button disabled={this.state.quantite==0} onClick={this.decrementquantite}>buy</button>
+        <button disabled={this.state.quantite==0} onClick={this.props.parentproduct(this.props.product)}>buy</button>
       </Card>;
     }
   }
