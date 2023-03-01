@@ -29,13 +29,13 @@ class Products extends Component {
       <>
         {products.map((p) => {
           return (
-            <Product
+            <Product  
               product={p}
               parentproduct={this.decrementquantite}
               key={p.id}
             />
           );
-        })}
+        })} 
       </>
     );
   }
